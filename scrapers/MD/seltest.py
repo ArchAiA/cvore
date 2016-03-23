@@ -12,6 +12,8 @@ class ScrapeMD(object):
 		self.url = url
 		self.browser = browser
 		self.browser.get(self.url)
+		self.numberOfContracts = self.GetNumberOfContracts()
+		print self.numberOfContracts
 		# self.IterateThroughMDPages()
 
 	def SaveToFile(self, scraped_data, index):
@@ -23,13 +25,22 @@ class ScrapeMD(object):
 
 
 	def IterateThroughMDPages(self):
-		for index in range(14): #!!! HOW DO WE TELL THIS TO END WHEN THERE ARE NO MORE NEW PAGES
+		numberOfPages = self.numberOfContracts / 25
+		print numberOfPages
+		for index in range(1,numberOfPages+2): #Why do I have to add the +2 to the number of pages to cover all of the pages.  I would understand +1, but wtf is up with +2
 			try:
-				self.SaveToFile(self.browser.page_source, index)								
-				self.browser.find_element_by_xpath("/html/body/form/table[4]/tbody/tr[4]/td/table/tbody/tr[2]/td/a[" + str(index) + "]").click()
+				# self.browser.find_element_by_xpath("/html/body/form/table[4]/tbody/tr[4]/td/table/tbody/tr[2]/td/a[" + str(index) + "]").click()
+				self.browser.execute_script("viewPage(" + str(index) + ")")
 				self.browser.forward()
+				self.SaveToFile(self.browser.page_source, index)												
 			except:
 				pass
+
+	def GetNumberOfContracts(self):
+		MDNumContracts = self.browser.find_element_by_xpath("/html/body/form/table[4]/tbody/tr[4]/td/table/tbody/tr[1]/td")
+		MDNumContracts = MDNumContracts.get_attribute('innerHTML')
+		MDNumContracts = str(MDNumContracts).rsplit(' ', 1)[1]
+		return int(MDNumContracts)
 
 
 
