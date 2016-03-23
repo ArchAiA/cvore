@@ -3,8 +3,7 @@ import datetime
 import os
 import time
 
-
-path_to_chromedriver = '/home/david/Projects/cvore/dependencies/chromedriver'
+path_to_chromedriver = '../../dependencies/chromedriver'
 browser = webdriver.Chrome(executable_path = path_to_chromedriver)
 
 url = 'http://emaryland.buyspeed.com/bso/external/publicBids.sdo'
@@ -13,9 +12,8 @@ browser.get(url)
 def SaveToFile(scraped_data, index):
 	index = index
 	to_be_written = scraped_data
-	print type(to_be_written)
 
-	f = open("../../htmloutput/MD/MDPage" + str(index) + "-" + str(datetime.datetime.now()), 'w')
+	f = open("../../htmloutput/MD/MDPage" + str(index) + "-" + str(datetime.datetime.now()) + ".html", 'w')
 	f.write(to_be_written.encode('utf8'))
 	f.close()
 
