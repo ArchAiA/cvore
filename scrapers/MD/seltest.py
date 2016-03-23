@@ -37,6 +37,7 @@ class ScrapeMD(object):
 		f.close()
 
 	def ScrapeFiles(self):
+		pass
 		#Need to scrape <table id="resultsTable" name="resultsTable" class="table-02">
 		#Each row in the table increments the tableStripe class as seen below
 			#<tr class="tableStripe-01"><td class="tableText-01" align="center" valign="top">
@@ -44,6 +45,7 @@ class ScrapeMD(object):
 		#I think that each tableStripe has the same number of <td> elements
 
 	def WriteToDatabase(self):
+		pass
 
 
 
