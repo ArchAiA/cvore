@@ -16,6 +16,9 @@ statesites = {'MD' : 'http://emaryland.buyspeed.com/bso/external/publicBids.sdo'
 '''SCRAPE MD'''
 loader = ScrapeMD(statesites['MD'], browser)
 loader.IterateThroughMDPages()
+loader.ScrapeFiles()
+
+
 # loader.StateScrape()
 
 '''SCRAPE MD'''
