@@ -15,6 +15,7 @@ class ScrapeMD(object):
 		self.scraped_page_container = []
 		self.output_file_name = "../htmloutput/MD/MDPage" + "-" + str(datetime.datetime.now()) + ".html"
 		open(self.output_file_name, 'w').close()
+		self.temp = None
 
 		self.bs4container = []
 
@@ -54,9 +55,24 @@ class ScrapeMD(object):
 		f.close()
 
 	def ScrapeFiles(self):
+		open('temp.html', 'w').close()
+
 		for item in self.scraped_page_container:
-			soup = BeautifulSoup(item, 'html.parser')
-			self.bs4container.append(soup.find_all(class_='tableText-01'))
+			soup = BeautifulSoup(str(item), 'lxml')
+			self.bs4container.append(soup.find_all(class_='table-02'))
+		
+		for item in self.bs4container:
+			f2 = open('temp.html', 'a')
+			f2.write(str(item))
+			f2.close()
+
+
+		# soup = BeautifulSoup(open(self.output_file_name), 'html.parser')
+		# self.temp = soup
+		# self.bs4container.append(soup.find_all('table'))
+
+
+
 
 
 		#Need to scrape <table id="resultsTable" name="resultsTable" class="table-02">
