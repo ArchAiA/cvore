@@ -59,12 +59,18 @@ class ScrapeMD(object):
 
 		for item in self.scraped_page_container:
 			soup = BeautifulSoup(str(item), 'lxml')
-			self.bs4container.append(soup.find_all(class_='table-02'))
-		
+			self.bs4container.append(soup.find_all(class_='tableStripe-01'))
+			print type(soup)
+
 		for item in self.bs4container:
 			f2 = open('temp.html', 'a')
 			f2.write(str(item))
 			f2.close()
+
+
+		#YOU MUST USE THE LXML PARSER FOR THESE TO WORK FOR SOME REASON
+		#test = soup.find_all('tr', ['tableStripe-01', 'tableStripe-02'])
+		#test = soup.find_all('True', {'class':['tableStripe-01', 'tableStripe-02']})
 
 
 		# soup = BeautifulSoup(open(self.output_file_name), 'html.parser')
