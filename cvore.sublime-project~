@@ -3,10 +3,6 @@
 	{
 		"selected_items":
 		[
-			[
-				"scraped",
-				"scraped_page_container"
-			]
 		]
 	},
 	"buffers":
@@ -42,26 +38,10 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/home/david/Projects/cvore/src"
-	],
 	"file_history":
 	[
-		"/home/david/Projects/bs4tut/bs4tut.py",
-		"/home/david/Projects/bs4tut/test.html",
-		"/home/david/Projects/bsrtut/bs4.tut",
-		"/home/david/Projects/cvore/src/scrapers/driver.py",
-		"/home/david/Projects/cvore/src/scrapers/temp.html",
-		"/home/david/Projects/cvore/src/scrapers/MD/seltest.py",
-		"/home/david/Projects/cvore/src/scrapers/explore.html",
-		"/home/david/Projects/cvore/src/scrapers/MD/scraper.py",
-		"/home/david/.bashrc",
-		"/home/david/Projects/cvore/src/htmloutput/MD/MDPage-2016-03-24 13:44:48.367517.html",
-		"/home/david/Projects/cvore/src/htmloutput/MD/MDPage-2016-03-24 12:28:30.791396.html",
-		"/home/david/Projects/cvore/src/scrapers/MD/jstest.py",
-		"/home/david/Projects/cvore/src/htmloutput/MD/MDPage1-2016-03-23 12:15:06.966285.html",
 		"/home/david/Projects/cvore/src/htmloutput/MD.html",
+		"/home/david/Projects/cvore/src/scrapers/MD/scraper.py",
 		"/home/david/Projects/cvore/src/driver.py",
 		"/home/david/Projects/cvore/src/test.txt",
 		"/home/david/Projects/TGR/src/templates/navbar.html",
@@ -81,15 +61,16 @@
 		"/home/david/Projects/TGR/src/newsletter/admin.py",
 		"/home/david/Projects/TGR/source/TGR/urls.py",
 		"/home/david/Projects/TGR/source/landingpage/views.py",
+		"/home/david/.bashrc",
 		"/media/david/KINGSTON/kaggle/titanic/4-randomforest/TitanicRandomForest.py"
 	],
 	"find":
 	{
-		"height": 42.0
+		"height": 36.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 0,
 		"where_history":
 		[
 		]
@@ -99,14 +80,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"#",
-			"]",
-			"tbody",
-			"<tr",
-			"tr",
-			"Link-01",
-			"inputs-01",
-			"view",
 			"glyphicon",
 			"crispy",
 			"python"
@@ -117,7 +90,6 @@
 		"regex": false,
 		"replace_history":
 		[
-			""
 		],
 		"reverse": false,
 		"show_context": true,
@@ -125,6 +97,12 @@
 		"whole_word": false,
 		"wrap": true
 	},
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
 	"groups":
 	[
 		{
@@ -135,11 +113,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 34.0
+		"height": 36.0
 	},
 	"input":
 	{
-		"height": 42.0
+		"height": 33.0
 	},
 	"layout":
 	{
@@ -169,10 +147,10 @@
 		"height": 0.0
 	},
 	"pinned_build_system": "",
-	"project": "cvore.sublime-project",
+	"project": "cvore.sublime-workspace",
 	"replace":
 	{
-		"height": 78.0
+		"height": 68.0
 	},
 	"save_all_on_build": true,
 	"select_file":
