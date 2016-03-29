@@ -21,6 +21,8 @@ class ScrapeMD(object):
 
 		self.bs4container = []
 
+		self.IterateThroughMDPages():
+
 	def GetNumberOfContracts(self):
 		MDNumContracts = self.browser.find_element_by_xpath("/html/body/form/table[4]/tbody/tr[4]/td/table/tbody/tr[1]/td")
 		MDNumContracts = MDNumContracts.get_attribute('innerHTML')
@@ -72,7 +74,8 @@ class ScrapeMD(object):
 			f2.close()
 
 	# def WriteToDB(self):
-	# 	for 
+	# 	for entry in self.bs4container:
+
 
 
 
