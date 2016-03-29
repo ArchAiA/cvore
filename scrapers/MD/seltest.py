@@ -57,10 +57,10 @@ class ScrapeMD(object):
 	def ScrapeFiles(self):
 		open('temp.html', 'w').close()
 
+		#Takes each list element (which is a page from the website), and 
 		for item in self.scraped_page_container:
 			soup = BeautifulSoup(str(item), 'lxml')
-			self.bs4container.append(soup.find_all(class_='tableStripe-01'))
-			print type(soup)
+			self.bs4container.append(soup.find_all('tr', ['tableStripe-01', 'tableStripe-02']))
 
 		for item in self.bs4container:
 			f2 = open('temp.html', 'a')
