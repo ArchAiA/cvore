@@ -15,6 +15,8 @@ class ScrapeMD(object):
 		self.scraped_page_container = []
 		self.output_file_name = "../htmloutput/MD/MDPage" + "-" + str(datetime.datetime.now()) + ".html"
 		open(self.output_file_name, 'w').close()
+
+		self.soup = []
 		self.temp = None
 
 		self.bs4container = []
@@ -58,14 +60,20 @@ class ScrapeMD(object):
 		open('temp.html', 'w').close()
 
 		#Takes each list element (which is a page from the website), and 
-		for item in self.scraped_page_container:
-			soup = BeautifulSoup(str(item), 'lxml')
-			self.bs4container.append(soup.find_all('tr', ['tableStripe-01', 'tableStripe-02']))
+		for scrapedPage in self.scraped_page_container:
+			soup = BeautifulSoup(scrapedPage, 'lxml')
+			# self.bs4container.append(soup.find_all('tr', ['tableStripe-01', 'tableStripe-02']))
+			for contractLine in soup.find_all('tr', ['tableStripe-01', 'tableStripe-02']):
+				self.bs4container.append(contractLine)
 
-		for item in self.bs4container:
+		for listing in self.bs4container:
 			f2 = open('temp.html', 'a')
-			f2.write(str(item))
+			f2.write(str(listing))
 			f2.close()
+
+	# def WriteToDB(self):
+	# 	for 
+
 
 
 		#YOU MUST USE THE LXML PARSER FOR THESE TO WORK FOR SOME REASON
