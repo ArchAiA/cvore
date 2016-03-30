@@ -29,7 +29,8 @@
 			<th> Created At </th>
 			<th> Expiration Date </th>
 		</tr>
-		<tr ng-repeat="contract in contracts | filter: filter_name.product_name | orderBy: created_at ">
+		
+		<tr ng-repeat="contract in contracts | filter: filter_name | orderBy: created_at ">
 			<td ng-bind='contract.state'></td>
 			<td ng-bind='contract.contract_id'></td>
 			<td ng-bind='contract.alternate_id'></td>
