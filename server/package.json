@@ -1,5 +1,5 @@
 {
-  "name": "FullMean_Friends",
+  "name": "Contractvore",
   "dependencies": {
     "body-parser": "latest",
     "express": "^4.10.0",
