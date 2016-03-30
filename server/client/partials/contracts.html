@@ -1,0 +1,45 @@
+<div ng-controller="ContractsController">
+	<h1>Add a Contract</h1>
+	<form action="">
+		<input type="text" ng-model="new_contract.state" placeholder="State">
+		<input type="text" ng-model="new_contract.contractid" placeholder="Contract ID">
+		<input type="text" ng-model="new_contract.alternateid" placeholder="Alternate ID">
+		<input type="text" ng-model="new_contract.contactname" placeholder="Contact Name">
+		<input type="text" ng-model="new_contract.description" placeholder="Description">
+		<input type="date" ng-model="new_contract.expiration">
+		
+		Purchase Method: <select name="" id="" ng-model="new_contract.purchasemethod">
+			<option value="1">Open Market</option>
+			<option value="2">Sole Source</option>
+			<option value="3">Greased Palms</option>
+		</select>
+		
+		<input type="submit" ng-click="addContract()">
+	</form>
+	<input type="text" ng-model="filter_name" placeholder="filter"> {{filter_name}}
+
+	<table>
+		<tr>
+			<th> State </th>
+			<th> Contract ID </th>
+			<th> Alternate ID </th>
+			<th> Contact Name </th>
+			<th> Description </th>
+			<th> Purchase Method </th>
+			<th> Created At </th>
+			<th> Expiration Date </th>
+		</tr>
+		<tr ng-repeat="contract in contracts | filter: filter_name.product_name | orderBy: created_at ">
+			<td ng-bind='contract.state'></td>
+			<td ng-bind='contract.contract_id'></td>
+			<td ng-bind='contract.alternate_id'></td>
+			<td ng-bind='contract.contact_name'></td>
+			<td ng-bind='contract.description'></td>
+			<td ng-bind='contract.purchase_method'></td>
+			<td ng-bind='contract.created_at | date: "longDate"'></td>
+			<td ng-bind='contract.expires_at | date: "longDate"'></td>
+			<td> <button ng-click='deleteContract(contract)'>Delete Contract</button></td>
+		</tr>
+	</table>
+	
+</div>

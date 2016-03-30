@@ -1,0 +1,8 @@
+{
+  "name": "FullMean_Friends",
+  "dependencies": {
+    "body-parser": "latest",
+    "express": "^4.10.0",
+    "mongoose": "latest"
+  }
+}
