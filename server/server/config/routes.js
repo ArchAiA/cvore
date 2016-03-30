@@ -1,4 +1,4 @@
-let friends = require('./../controllers/contracts.js');
+var contracts = require('./../controllers/contracts.js');
 
 module.exports = function(app) {
 	app.get('/get_contracts', function(req, res) {

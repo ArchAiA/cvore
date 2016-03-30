@@ -1,5 +1,5 @@
-let mongoose = require('mongoose');
-let Contract = mongoose.model('contract');
+var mongoose = require('mongoose');
+var Contract = mongoose.model('contract');
 
 module.exports = (function(){
   return {
@@ -16,7 +16,7 @@ module.exports = (function(){
     add: function(req, res) {
       
       // create new contract from req.data
-      let contract = new Contract(req.body);
+      var contract = new Contract(req.body);
       
       // try to save new contract to DB and run callback with any errors
       contract.save(function(err, data) {
